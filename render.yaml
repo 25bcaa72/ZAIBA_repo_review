@@ -1,0 +1,33 @@
+# =============================================
+# render.yaml — Deploy on Render
+# Docs: https://render.com/docs/blueprint-spec
+# =============================================
+
+services:
+  - type: web
+    name: portfolio
+    runtime: node
+    region: singapore          # closest to Bengaluru
+    plan: free
+
+    buildCommand: npm install
+    startCommand: npm start
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000            # Render assigns this automatically
+      - key: DATABASE_URL
+        sync: false             # Set manually in Render dashboard (secret)
+      - key: ALLOWED_ORIGIN
+        sync: false             # e.g. https://your-portfolio.onrender.com
+      # Optional email vars — add in dashboard if needed
+      # - key: SMTP_HOST
+      # - key: SMTP_PORT
+      # - key: SMTP_USER
+      # - key: SMTP_PASS
+      # - key: NOTIFY_EMAIL
+
+    healthCheckPath: /api/projects
+    autoDeploy: true            # auto-deploy on git push
