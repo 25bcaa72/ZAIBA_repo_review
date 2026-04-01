@@ -30,8 +30,8 @@ temp/
 .eslintcache
 .stylelintcache
 
-# Data directory (keep local)
-data/
+# Data directory (keep local) - REMOVED FOR DEPLOYMENT
+# data/
 
 # Temporary files
 *.tmp
@@ -122,8 +122,8 @@ temp/
 .eslintcache
 .stylelintcache
 
-# Data directory (keep local)
-data/
+# Data directory (keep local) - REMOVED FOR DEPLOYMENT
+# data/
 
 # Temporary files
 *.tmp

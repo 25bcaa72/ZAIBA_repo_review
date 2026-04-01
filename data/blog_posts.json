@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with Full-Stack Development",
+    "excerpt": "Learn the fundamentals of building modern web applications from frontend to backend.",
+    "content": "Full-stack development combines frontend technologies like React or Vue.js with backend technologies like Node.js or Python. In this post, we'll explore the key concepts and best practices for building robust web applications...",
+    "slug": "getting-started-fullstack",
+    "is_published": true,
+    "published_at": "2026-04-01T07:02:43.743Z"
+  },
+  {
+    "id": 2,
+    "title": "Local JSON Database",
+    "excerpt": "Discover how to use local JSON files as a simple database solution.",
+    "content": "Local JSON databases offer a simple, reliable way to store data without external dependencies. They're perfect for small projects, portfolios, and applications that don't need complex database features...",
+    "slug": "local-json-database",
+    "is_published": true,
+    "published_at": "2026-04-01T07:02:43.743Z"
+  },
+  {
+    "id": 3,
+    "title": "Deploying Node.js Apps on Render",
+    "excerpt": "Step-by-step guide to deploying your Node.js applications on Render platform.",
+    "content": "Render provides a seamless deployment experience for Node.js applications. With built-in CI/CD, automatic SSL, and generous free tier, it's perfect for both hobby projects and production apps...",
+    "slug": "deploy-nodejs-render",
+    "is_published": true,
+    "published_at": "2026-04-01T07:02:43.743Z"
+  }
+]
