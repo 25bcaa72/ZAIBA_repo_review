@@ -14,8 +14,18 @@ const DB_FILES = {
 
 // Ensure data directory exists
 if (!fs.existsSync('./data')) {
-  fs.mkdirSync('./data');
+  fs.mkdirSync('./data', { recursive: true });
+  console.log('✅ Created data directory');
 }
+
+// Initialize JSON files if they don't exist
+const defaultData = [];
+Object.keys(DB_FILES).forEach(type => {
+  if (!fs.existsSync(DB_FILES[type])) {
+    fs.writeFileSync(DB_FILES[type], JSON.stringify(defaultData, null, 2));
+    console.log(`✅ Created ${DB_FILES[type]}`);
+  }
+});
 
 // Read data from JSON files
 function readData(type) {
@@ -144,6 +154,19 @@ const server = http.createServer((req, res) => {
 
   // Static files
   let filePath = req.url === '/' ? '/index.html' : req.url;
+  
+  // Remove query parameters and decode URI
+  filePath = filePath.split('?')[0];
+  filePath = decodeURIComponent(filePath);
+  
+  // Security: prevent path traversal
+  filePath = path.normalize(filePath);
+  if (filePath.includes('..')) {
+    res.writeHead(403);
+    res.end('Forbidden');
+    return;
+  }
+  
   filePath = path.join(__dirname, filePath);
 
   fs.readFile(filePath, (err, data) => {
