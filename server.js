@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
-const PORT = process.env.PORT || 3011;
+const PORT = process.env.PORT || 3012;
 
 // Local JSON database files
 const DB_FILES = {
